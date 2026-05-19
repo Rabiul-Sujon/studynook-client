@@ -86,13 +86,14 @@ const Navbar = () => {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
                         </svg>
                     </div>
-                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52"
+                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-1 p-2 shadow rounded-box w-52"
                         style={{ backgroundColor: '#0f0f1a', border: '0.5px solid #2a2a4e' }}>
                         {navLinks}
                     </ul>
                 </div>
+                
                 <Link to="/" className="flex items-center gap-1">
-                    <span style={{ color: '#10b981' }} className="text-2xl font-bold">Study</span>
+                 <span style={{ color: '#10b981' }} className="text-2xl font-bold">Study</span>
                     <span style={{ color: '#ffffff' }} className="text-2xl font-bold">Nook</span>
                 </Link>
             </div>
@@ -128,7 +129,7 @@ const Navbar = () => {
                                 <img src={user?.photoURL || 'https://i.pravatar.cc/150'} alt={user?.displayName} />
                             </div>
                         </div>
-                        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52"
+                        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-1 p-2 shadow rounded-box w-52"
                             style={{ backgroundColor: '#0f0f1a', border: '0.5px solid #2a2a4e' }}>
                             <li className="px-4 py-2">
                                 <span style={{ color: '#10b981', fontWeight: '600' }}>{user?.displayName}</span>
