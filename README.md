@@ -1,16 +1,38 @@
-# React + Vite
+# StudyNook - Library Study Room Booking
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Live Site URL: [StudyNook](https://studynook-client-beryl.vercel.app)
 
-Currently, two official plugins are available:
+## About The Project
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+StudyNook is a full-stack web application where students and library users can list study rooms they control, and any registered user can browse, search, filter, and book those rooms for a specific date and time slot.
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 🔐 Secure JWT authentication stored in HTTP-only cookies with Google OAuth support for seamless login
+- 🏠 Browse and book quiet private study rooms with real-time availability and instant confirmation
+- 📅 Smart booking system that prevents double bookings using advanced time-slot conflict detection
+- 🔍 Search and filter rooms by name and amenities for quick and easy discovery
+- 👤 Personal dashboard to manage your own room listings and track all your bookings
+- 🎨 Beautiful dark-themed responsive design that works on mobile, tablet, and desktop
+- ⚡ Smooth animations and transitions powered by Framer Motion for a polished experience
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React.js + Vite
+- Tailwind CSS + DaisyUI
+- Firebase Authentication
+- Axios
+- Framer Motion
+- React Router DOM
+- React Hot Toast
+- SweetAlert2
+
+## Running Locally
+
+Clone the project:
+
+git clone https://github.com/Rabiul-Sujon/studynook-client.git
+
+
+
+
