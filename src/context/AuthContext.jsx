@@ -1,3 +1,4 @@
+/* @refresh clean */
 import { createContext, useContext, useEffect, useState } from "react";
 import {
     signInWithPopup,
@@ -10,9 +11,9 @@ import {
 import { auth, googleProvider } from "../firebase/firebase.config";
 import axiosInstance from "../utils/axios";
 
-export const AuthContext = createContext(null);
+ const AuthContext = createContext(null);
 
-export const useAuth = () => useContext(AuthContext);
+ const useAuth = () => useContext(AuthContext);
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
@@ -79,5 +80,5 @@ const AuthProvider = ({ children }) => {
         </AuthContext.Provider>
     );
 };
-
+export { AuthContext, useAuth };
 export default AuthProvider;

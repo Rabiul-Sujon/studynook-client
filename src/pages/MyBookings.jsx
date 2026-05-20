@@ -45,7 +45,9 @@ const MyBookings = () => {
         }).then(async (result) => {
             if (result.isConfirmed) {
                 try {
-                    await axiosInstance.delete(`/api/bookings/${bookingId}`);
+                    // await axiosInstance.delete(`/api/bookings/${bookingId}`);
+            
+                    await axiosInstance.patch(`/api/bookings/${bookingId}/cancel`);
                     toast.success('Booking cancelled successfully!');
                     
                     // Optimistic UI update: remove from local state instantly
