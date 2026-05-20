@@ -2,6 +2,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { useState } from 'react';
 import toast from 'react-hot-toast';
+import logo from '../../assets/studynook-logo.png';
 
 const Navbar = () => {
     const { user, logout } = useAuth();
@@ -92,10 +93,17 @@ const Navbar = () => {
                     </ul>
                 </div>
                 
-                <Link to="/" className="flex items-center gap-1">
-                 <span style={{ color: '#10b981' }} className="text-2xl font-bold">Study</span>
-                    <span style={{ color: '#ffffff' }} className="text-2xl font-bold">Nook</span>
-                </Link>
+                <Link to="/" className="flex items-center">
+                 <img 
+                 src={logo}
+                 alt="StudyNook" 
+                 className="h-8 w-auto"
+                 />
+                 <span style={{ color: '#10b981' }} className="text-xl font-bold">Study   
+                 </span>
+                 <span style={{ color: '#ffffff' }} className="text-xl font-bold">Nook</span>
+                 </Link>
+
             </div>
 
             {/* Navbar Center */}
