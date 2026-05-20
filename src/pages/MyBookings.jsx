@@ -19,7 +19,8 @@ const MyBookings = () => {
 
             try {
                 const res = await axiosInstance.get('/api/bookings/my-bookings');
-                setBookings(res.data);
+                // setBookings(res.data);
+                setBookings(res.data.filter(booking => booking.status !== 'cancelled'));
             } catch (error) {
                 console.error("Fetch bookings error:", error);
                 toast.error('Failed to load your bookings!');
