@@ -83,7 +83,8 @@ const RoomDetails = () => {
     if (loading) return <LoadingSpinner />;
     if (!room) return <div className="text-center text-white mt-20">Room not found!</div>;
 
-    const isOwner = user && room.owner === user.uid;
+    // const isOwner = user && room.owner === user.uid;
+    const isOwner = user && room.ownerEmail === user.email;
 
     return (
         <div className="min-h-screen py-12 px-6" style={{ backgroundColor: '#0f0f1a' }}>
