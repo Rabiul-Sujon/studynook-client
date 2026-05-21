@@ -97,11 +97,11 @@ const Navbar = () => {
                  <img 
                  src={logo}
                  alt="StudyNook" 
-                 className="h-8 w-auto"
+                 className="h-12 w-auto"
                  />
-                 <span style={{ color: '#10b981' }} className="text-xl font-bold">Study   
+                 {/* <span style={{ color: '#10b981' }} className="text-xl font-bold">Study   
                  </span>
-                 <span style={{ color: '#ffffff' }} className="text-xl font-bold">Nook</span>
+                 <span style={{ color: '#ffffff' }} className="text-xl font-bold">Nook</span> */}
                  </Link>
 
             </div>
