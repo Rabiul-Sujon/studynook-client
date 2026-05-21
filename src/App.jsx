@@ -11,6 +11,7 @@ import NotFound from './pages/NotFound'
 import PrivateRoute from './components/PrivateRoute'
 import Navbar from './components/shared/Navbar'
 import Footer from './components/shared/Footer'
+import About from './pages/About'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/rooms" element={<Rooms />} />
+        <Route path="/about" element={<About />} />
         <Route path="/rooms/:id" element={<RoomDetails />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
