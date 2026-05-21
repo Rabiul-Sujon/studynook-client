@@ -134,15 +134,15 @@ const Navbar = () => {
                     <div className="dropdown dropdown-end">
                         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full ring-2" style={{ ringColor: '#10b981' }}>
-                                {/* <img src={user?.photoURL || 'https://i.pravatar.cc/150'} alt={user?.displayName} /> */}
-                                <img src={user?.photoURL || 'https://i.pravatar.cc/150'} alt={user?.name || user?.displayName} />
+                                <img src={user?.photoURL || 'https://i.pravatar.cc/150'} alt={user?.displayName} />
+                                
                             </div>
                         </div>
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-1 p-2 shadow rounded-box w-52"
                             style={{ backgroundColor: '#0f0f1a', border: '0.5px solid #2a2a4e' }}>
                             <li className="px-4 py-2">
-                                {/* <span style={{ color: '#10b981', fontWeight: '600' }}>{user?.displayName}</span> */}
-                                <span style={{ color: '#10b981', fontWeight: '600' }}>{user?.name || user?.displayName}</span>
+                                <span style={{ color: '#10b981', fontWeight: '600' }}>{user?.displayName}</span>
+                                
                             </li>
                             <li><Link to="/my-listings" style={{ color: '#9ca3af' }}>My Listings</Link></li>
                             <li><Link to="/my-bookings" style={{ color: '#9ca3af' }}>My Bookings</Link></li>
