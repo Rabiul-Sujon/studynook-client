@@ -19,8 +19,9 @@ const MyBookings = () => {
 
             try {
                 const res = await axiosInstance.get('/api/bookings/my-bookings');
-                // setBookings(res.data);
-                setBookings(res.data.filter(booking => booking.status !== 'cancelled'));
+                setBookings(res.data);
+                // setBookings(res.data.filter(booking => booking.status !== 'cancelled'));
+                
             } catch (error) {
                 console.error("Fetch bookings error:", error);
                 toast.error('Failed to load your bookings!');
@@ -52,7 +53,12 @@ const MyBookings = () => {
                     toast.success('Booking cancelled successfully!');
                     
                     // Optimistic UI update: remove from local state instantly
-                    setBookings((prevBookings) => prevBookings.filter((b) => b._id !== bookingId));
+                    // setBookings((prevBookings) => prevBookings.filter((b) => b._id !== bookingId));
+                     setBookings((prevBookings) => 
+                     prevBookings.map((b) => 
+                     b._id === bookingId ? { ...b, status: 'cancelled' } : b
+                     )
+                    );
                 } catch (error) {
                     console.error("Cancel booking error:", error);
                     toast.error('Failed to cancel your booking!');
@@ -122,6 +128,15 @@ const MyBookings = () => {
                                             <h3 className="text-xl font-bold mb-1 truncate" style={{ color: '#ffffff' }}>
                                                 {booking.room?.name || 'Study Space'}
                                             </h3>
+                                            {/* Status Badge */}
+                               <span className="px-3 py- rounded-full text-xs font-bold"
+                               style={{
+                               backgroundColor: booking.status === 'confirmed' ? 'rgba(16, 185, 129, 0.1)' : 'rgba(239, 68, 68, 0.1)',
+                                color: booking.status === 'confirmed' ? '#10b981' : '#ef4444',
+                               border: `1px solid ${booking.status === 'confirmed' ? '#10b981' : '#ef4444'}`
+                                }}>
+                                {booking.status === 'confirmed' ? '✅ Confirmed' : '❌ Cancelled'}
+                                </span>
                                             <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm font-medium" style={{ color: '#9ca3af' }}>
                                                 <span>📅 Date: {formatDate(booking.date)}</span>
                                                 <span>⏰ Time: {booking.startTime} - {booking.endTime}</span>
@@ -146,12 +161,14 @@ const MyBookings = () => {
                                                 style={{ backgroundColor: '#0f0f1a', border: '1px solid #2a2a4e', color: '#ffffff' }}>
                                                 View Room
                                             </Link>
+                                            {booking.status === 'confirmed' && new Date(booking.date) >= new Date() && (
                                             <button
                                                 onClick={() => handleCancelBooking(booking._id)}
                                                 className="px-4 py-2.5 rounded-xl text-sm font-medium transition-colors cursor-pointer"
                                                 style={{ backgroundColor: 'rgba(239, 68, 68, 0.1)', border: '1px solid #ef4444', color: '#ef4444' }}>
                                                 Cancel
                                             </button>
+                                            )}
                                         </div>
                                     </div>
                                 </motion.div>
